@@ -9,7 +9,7 @@ struct Node {
 
 Node* START = NULL;
 
-void addnote() {
+void addNode() {
 	int nim;
 	string nama;
 	Node* nodeBaru = new Node();
@@ -131,20 +131,29 @@ void searchData() {
 
 int main() {
 	int pilihan;
-	do
-	{
-		try
-		{
+	do {
+		try {
 
-			cout << "1. Tambah Data" << endl;
+			cout << "1. Menambahkan Data" << endl;
 			cout << "2. Hapus Data" << endl;
-			cout << "3. Tampilkan Data" << endl;
+			cout << "3. Tanpilkan Data" << endl;
 			cout << "4. Cari Data" << endl;
 			cout << "5. Keluar" << endl;
-			cout << "Pilihan: ";
+
+			cout << "Pilihan : ";
 			cin >> pilihan;
-			switch (pilihan)
-			
-		}
-	}
-}
+
+			switch (pilihan) {
+			case 1:
+				addNode();
+				cout << "data berhasil ditambahkan" << endl;
+				system("pause");
+				system("cls");
+				break;
+			case 2:
+				if (listEmpty()) {
+					cout << "list kosong" << endl;
+					system("pause");
+					system("cls");
+					break;
+				}
